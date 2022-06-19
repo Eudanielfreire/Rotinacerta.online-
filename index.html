@@ -1,154 +1,477 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <style>
-    @font-face {
-      font-family: Gotham Rounded;
-      src: url("font.otf") format("opentype");
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      font-family: Gotham Rounded;
-    }
-    body {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      height: 100vh;
-      background: url("Design sem nome (54).png");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .container {
-      width: 700px;
-      max-width: 90%;
-    }
-    .black {
-      background-color: white;
-      padding: 10px;
-      text-align: center;
-      border-radius: 20px;
-      box-shadow: 0 0 10px 2px;
-    }
-    .answer {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 10px;
-    }
-    @media (max-width: 991px) {
-      .answer {
-        display: grid;
-        grid-template-columns: repeat(1, auto);
-        gap: 10px;
-      }
-    }
-    .btn {
-      border-radius: 10px;
-      padding: 5px 10px;
-      font-size: 30px;
-      background-color: #f7ce6a;
-      outline: none;
-      text-decoration: none;
-      color: black;
-    }
-    .black h1 {
-      color: black;
-    }
-    .black p {
-      font-size: 18px;
-    }
-    .hide {
-      display: none;
-    }
-  </style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Meta Pixel Code -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/com.css">
+
+    <!-- Título da Página -->
+    <title>N°1 en pérdida de peso</title>
+    
+    <style type="text/css">
+      header {
+        color: white;
+        background-image: rul("./assets/img/folhas.jpg");
+        background-color: rgba(0, 0, 0, 0.6);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode: darken;
+      }
+    </style>
+    
+ <!-- Meta Pixel Code -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2155203774629634');
-  fbq('track', 'AddToCart');
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '761351355020760');
+fbq('track', 'PageView');
+fbq('init', '526292352468306');
+fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2155203774629634&ev=AddToCart&noscript=1"
+src="https://www.facebook.com/tr?id=761351355020760&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=526292352468306&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+    
+  </head>
+  <body>
 
-</head>
-<body> 
-  <div class="container">
-    <div class="black">
-      <div id="primeira">
-        <div class="question">
-          <h1>Dime..</h1>
-          <p>¿Alguna vez has reducido el tamaño de tus sueños por miedo a no lograrlos?</p>
-        </div>
-        <div class="answer">
-          <button class="btn" onclick="segunda()">SÍ</button>
-          <button class="btn" onclick="segunda()">NO</button>
-        </div>
-      </div>
-      <div id="segunda" class="hide">
-        <div class="question">
-          <h1>Vale, pues vamos..</h1>
-          <p>¿Tiene una mente abierta a los nuevos descubrimientos científicos en el ámbito de la salud?</p>
-        </div>
-        <div class="answer">
-          <button class="btn" onclick="terceira()">SÍ</button>
-          <button class="btn" onclick="terceira()">NO</button>
-        </div>
-      </div>
-      <div id="terceira" class="hide">
-        <div class="question">
-          <h1>Pregunta 3</h1>
-          <p>¿Tiene una mente abierta a los nuevos descubrimientos científicos en el ámbito de la salud?</p>
-        </div>
-        <div class="answer">
-          <button class="btn" onclick="quarta()">SÍ</button>
-          <button class="btn" onclick="quarta()">NO</button>
+    <header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <!-- Imagem Ultrasecreto -->
+            <img class="img-fluid" src="./assets/img/ultrasecreto.svg">
+
+            <!-- Headline -->
+            <h3 class="my-4"><b>Vea cómo el descubrimiento del Dr. Javier ha transformado enormemente mi vida.  </b></h3>
+
+
+
+
+            <!-- VSL -->
+           <div id="vid_629c20e50884a3000aad9a57" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_629c20e50884a3000aad9a57" src="https://images.converteai.net/c9b6561f-ce67-492b-8638-2fed2064c9ac/players/629c20e50884a3000aad9a57/thumbnail.jpg" alt="#37 Dólares" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_629c20e50884a3000aad9a57" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_629c20e50884a3000aad9a57">var s=document.createElement("script");s.src="https://scripts.converteai.net/c9b6561f-ce67-492b-8638-2fed2064c9ac/players/629c20e50884a3000aad9a57/player.js",s.async=!0,document.head.appendChild(s);</script>
+
+            <!-- Botão 1 -->
+            <div id="cta1" class="mt-4 d-none">
+              <a href="https://pay.hotmart.com/I70875183C?checkoutMode=10" class="a-btn" style="text-decoration: none;">
+                <span class="span-btn">SÍ ¡QUIERO BAJAR DE PESO YA!</span>
+                <span class="span-btn2">(ATENCIÓN: plazas limitadas)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="quarta" class="hide">
-        <div class="question">
-          <h1>¡Muy bien!</h1>
-          <p>Pocas personas tienen acceso a ver el siguiente vídeo al mismo tiempo, ¿Llegarás hasta el final?</p>
-        </div>
-        <div class="answer">
-          <button class="btn" onclick="redirect()">¡Quiero verlo!</button>
+    </header>
+
+
+
+    <section class="comments py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="fb-comments" style="margin-top: 5px;">
+              <div class="fb-comments-header">
+                <span>21 comentarios</span>
+              </div>
+              <div class="fb-comments-wrapper" id="2">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m2.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Marta Suarez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">¡¡Esto es lo que realmente necesitaba!!! Encontré el secreto para ponerme en forma. Mi esposo y yo amamos el programa... Gracias Pablo Gonzales y Dr.Javier 😘</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>91</likes>
+                        
+                        <date>16 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="3">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m3.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Vitória Perez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Chicas, no pensé que funcionaria para mí. Pero en tan solo un mes ya tenía resultados en grasa abdominal y bajé 8 kilos, antes nada me funcionaba, me encanta !!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>52</likes>
+                        
+                        <date>6 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="4">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m4.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Marína Vega</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Solo me peso todo al dia jaja, Ahhh!!, ¡no puedo creer que esté funcionando! Ya perdi 6 kilos!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>81</likes>
+                        
+                        <date>12 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="5">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m5.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Julia Cortez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Pagaría hasta un millón poe esta guía si supiera que iba a ser tan feliz con mi novio!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>106</likes>
+                        
+                        <date>23 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="6">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m6.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Emma Lopez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Peso 88 kilos, he probado varias dietas pero nada funciona 😭 ¿Me servirá realmente este programa?</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>104</likes>
+                        
+                        <date>34 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="7">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m7.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Roberta Duarte</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">¡No lo dudes Emma! Puedes confiar...pesaba 76 kilos y no podia bajar de peso de ninguna manera! EL guía fue la última tentaiva que yo hice, y funcionó muy bien. Puede intentar sin miedo, vas a mira 🥰</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>99</likes>
+                        
+                        <date>26 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="9">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m11.jpeg">
+                      </td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Rafaela Souza</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">@EmmaLopez yo tampoco me lo creia antes de probarlo. pero como Pablo Gonzalez da una garantía...Decidí probarlo, sorprendentemente, ¡funcionó MUY BIEN! Fue el único método que me hizo perder peso. </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Me gusta</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>100</likes>
+                        
+                        <date>39 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="fb-comments-loadmore" onclick="javascript:loadMore();">Cargar 5 comentarios más</button>
+              <div style="display:none" id="more">
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="10">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m12.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Ana Rodriguez</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">¿Alguien puede decirme cuánto tiempo puedo seguir usándolo?</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Me gusta</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>102</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="11">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m15.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Laura Fígueredo</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">@AnaRodriguez Mi amor, puedes usarlo hasta lograr tus resultados!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Me Gusta</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>95</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="12">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m16.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Daniele Ribeiro</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Mi vida cambió de la noche a la mañana! He recuperado mi autoestima y mi esperanza, Gracias por lo programa.. Dios te bending!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Me gusta</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>108</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="13">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m17.jpeg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Juliane Diaz</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Estoy terminado de ver el video y me lo voy a comprar!!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Me gusta</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>101</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="14">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m18.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Sara Zanette</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Ya lo compré, y puede decir con certeza que fue lo mejor que hice.. </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Me gusta</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>98</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Botão 2 -->
+            <div id="cta2" class="mt-4 d-none">
+              <a href="https://pay.hotmart.com/I70875183C?checkoutMode=10" class="a-btn" style="text-decoration: none;">
+                <span class="span-btn">¡QUIERO ACCEDER!</span>
+                <span class="span-btn2">(ATENCIÓN: plazas limitadas)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <p style="text-align: center; font-weight: bold;">© 2022 – Todos los derechos reservados. Este sitio no es parte ni está respaldado por Facebook. Facebook es una marca comercial de Facebook, Inc.</p>
-    <p style="text-align: center; font-weight: bold;"><a href="site/termosaqui" style="color: black;">Termos de Uso</a> | <a href="site/privacidadeaqui" style="color: black;">Política de Privacidade</a></p>
-  </div>
-  <script>
-    function segunda() {
-      document.getElementById("primeira").classList.add("hide")
-      document.getElementById("segunda").classList.remove("hide")
-    }
-    function terceira() {
-      document.getElementById("segunda").classList.add("hide")
-      document.getElementById("quarta").classList.remove("hide")
-    }
-    function quarta() {
-      document.getElementById("terceira").classList.add("hide")
-      document.getElementById("quarta").classList.remove("hide")
-    }
-    function redirect() {
-      location.href = "https://protocolodosucesso.online/" 
-    }
-  </script>
-</body>
+    </section>
+
+    <footer class="bg-dark py-3 text-center">
+      <div class="text-white"><a href="termos.html" class="text-white">Termos de Uso </a> | <a href="privacidade.html" class="text-white">Política de Privacidade </a></div>
+      <a href="privacidade.html" class="text-white"><a href="privacidade.html" class="text-white">"Este producto se comercializa a través de Hotmart. La plataforma no hace un control editorial previo de los productos comercializados, y mucho menos evalúa la tecnicidad y experiencia de quienes los producen. La existencia de un producto y su adquisición, a través de la plataforma, no puede considerarse una garantía de calidad del contenido y del resultado, en ningún caso. Al comprarlo, el comprador declara conocer esta información. Se puede acceder a las condiciones y políticas de Hotmart aquí, incluso antes de completar la compra".</a></div> </a></div>
+    </footer>
+
+    <script type="text/javascript">
+      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none"); document.getElementById("cta2").classList.remove("d-none")}, 1684000); // temporização da Call to Action (em milissegundos)
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./assets/js/com.js"></script>
+  </body>
 </html>
+
+
